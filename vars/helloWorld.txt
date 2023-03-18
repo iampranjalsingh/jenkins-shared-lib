@@ -1,0 +1,21 @@
+helloWorld
+Call
+
+<h3>Examples</h3>
+
+<h4>Sample usecase of pipeline script</h4>
+<code class="language-groovy"><pre>
+@library('jenkins-shared-lib') _
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                helloWorld(name: "Pranjal", dayOfWeek: "Sunday")
+            }
+        }
+    }
+}
+</pre></code>
