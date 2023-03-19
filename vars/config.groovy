@@ -20,10 +20,15 @@ def call(Closure closure) {
 
 
 def readConfig() {
-    def ini = new IniParser('globalConfig.ini')
-    ini.dumpConfig()
-    def secs = ini.getAllSections()
-    secs.each() { it ->
-        println it
-    }
+//    def ini = new IniParser('globalConfig.ini')
+//    ini.dumpConfig()
+//    def secs = ini.getAllSections()
+//    secs.each() { it ->
+//        println it
+//    }
+    def fileContents = libraryResource 'globalConfig.ini'
+    def props = readProperties(text:fileContents)
+    println(fileContents)
+    println("**********************")
+    println(props)
 }
