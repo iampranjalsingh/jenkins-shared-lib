@@ -23,7 +23,7 @@ def readConfig() {
     def config = libraryResource 'globalConfig.ini'
     println "$config"
     script {
-        sh "${config} >> example.txt"
+        sh "echo ${config} >> example.txt"
     }
     /*def ini = new IniParser('resources/globalConfig.ini')
     ini.dumpConfig()
