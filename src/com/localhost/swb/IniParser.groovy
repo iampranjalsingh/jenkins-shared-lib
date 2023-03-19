@@ -1,5 +1,15 @@
 package com.localhost.swb
 
+/**
+ * Example usage
+ * def ini = new IniParser('globalConfig.ini')
+ *    ini.dumpConfig()
+ *    def secs = ini.getAllSections()
+ *    secs.each() { it ->
+ *        println it
+ *    }
+ */
+
 class IniParser implements Serializable {
     def src = null;
     def sections = new ArrayList<String>();
