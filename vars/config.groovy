@@ -1,10 +1,9 @@
 #!/usr/bin/env groovy
 import com.localhost.swb.IniParser
-import com.cloudbees.groovy.cps.NonCPS
 
-def call(String filePath, Closure closure) {
-    def config = readProperties file:"globalConfig.ini"
-    // println(config)
+def call(String configFileName = 'globalConfig.ini') {
+    def config = readProperties file:"$configFileName"
+    println("$config")
     /*if (!filePath.isEmpty()) {
         def file_exist = findFiles (glob: filePath)
         if (filePath.length == 1) {
@@ -14,8 +13,4 @@ def call(String filePath, Closure closure) {
         }
     }*/
     return config
-}
-
-def call(Closure closure) {
-    call('', closure)
 }
