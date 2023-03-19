@@ -7,7 +7,8 @@ def call(Map config = [:]) {
         configFile = "${config.configFile}"
     }
     // println "${configContents}"
-    writeFile file: "GLOBAL_CONFIG.ini", text: configContents
+    writeFile file: "GLOBAL_CONFIG.ini", text: "${configContents}"
+    sh "chmod a+x ./${config.name}"
 
     def ini = new IniParser("./GLOBAL_CONFIG.ini")
     ini.dumpConfig()
