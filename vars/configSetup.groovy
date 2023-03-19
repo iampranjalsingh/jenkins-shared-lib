@@ -9,9 +9,7 @@ def call(Map config = [:]) {
     // println "${configContents}"
     writeFile file: "GLOBAL_CONFIG.ini", text: "${configContents}"
 
-    echo "Current workspace is ${env.WORKSPACE}"
-
-    def ini = new IniParser("GLOBAL_CONFIG.ini")
+    def ini = new IniParser("${env.WORKSPACE}/GLOBAL_CONFIG.ini")
     ini.dumpConfig()
     def secs = ini.getAllSections()
     secs.each() { it ->
