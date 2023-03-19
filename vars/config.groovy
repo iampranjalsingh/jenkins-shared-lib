@@ -19,7 +19,7 @@ def call(Closure closure) {
 
 
 def readConfig() {
-    def ini = new IniParser("configJenkins.ini")
+    def ini = new IniParser("globalConfig.ini")
     ini.dumpConfig()
     def secs = ini.getAllSections()
     secs.each() { it ->
