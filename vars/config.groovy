@@ -1,11 +1,17 @@
 #!/usr/bin/env groovy
 
 def call(String filePath, Closure closure) {
-    def request = libraryResource 'globalConfig.ini'
-    // def config = readProperties file:"globalConfig.ini"
+    /*def request = libraryResource 'globalConfig.ini'
     println "$request"
     def map = readProperties text: request
-    println "$map"
+    println "$map"*/
+
+
+    
+
+    def config = readProperties file:"globalConfig.ini"
+    println "$config"
+    println "$config['template']"
 
     if (!filePath.isEmpty()) {
         def file_exist = findFiles (glob: filePath)
