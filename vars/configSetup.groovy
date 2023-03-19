@@ -7,5 +7,5 @@ def call(Map config = [:]) {
         configFile = "${config.configFile}"
     }
     println "${configContents}"
-    writeFile file: "GlobalConfig", text: scriptcontents
+    writeFile file: "GlobalConfig", text: configContents
 }
