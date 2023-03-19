@@ -22,9 +22,7 @@ def call(Closure closure) {
 def readConfig() {
     def config = libraryResource 'globalConfig.ini'
     println "$config"
-    new File('./','Example.txt').withWriter('utf-8') {
-        writer -> writer.writeLine 'Hello World'
-    }
+    sh "${config} >> example.txt"
     /*def ini = new IniParser('resources/globalConfig.ini')
     ini.dumpConfig()
     def secs = ini.getAllSections()
