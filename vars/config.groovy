@@ -20,15 +20,10 @@ def call(Closure closure) {
 
 
 def readConfig() {
-    def config = libraryResource 'globalConfig.ini'
-    println "$config"
-    script {
-        sh "echo ${config} >> example.txt"
-    }
-    /*def ini = new IniParser('resources/globalConfig.ini')
+    def ini = new IniParser('globalConfig.ini')
     ini.dumpConfig()
     def secs = ini.getAllSections()
     secs.each() { it ->
         println it
-    }*/
+    }
 }

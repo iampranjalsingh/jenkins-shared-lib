@@ -8,7 +8,8 @@ class IniParser implements Serializable {
     boolean inSection = false;
 
     IniParser(filename) {
-        src = new File(filename)
+        // src = new File(filename)
+        src = libraryResource filename
         src.eachLine { line ->
             line.find(/\[(.*)\]/) {full, sec ->
                 sections.add(sec)
