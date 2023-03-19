@@ -8,7 +8,8 @@ def call(Map config = [:]) {
     }
     // println "${configContents}"
     writeFile file: "GLOBAL_CONFIG.ini", text: "${configContents}"
-    sh "chmod a+x ./GLOBAL_CONFIG.ini"
+
+    echo "Current workspace is ${env.WORKSPACE}"
 
     def ini = new IniParser("GLOBAL_CONFIG.ini")
     ini.dumpConfig()
