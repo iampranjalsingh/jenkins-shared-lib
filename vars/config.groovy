@@ -3,9 +3,9 @@
 def call(String filePath, Closure closure) {
     def config = libraryResource 'globalConfig.ini'
     println "$config"
-    def map = readProperties text: config
-    println "$map"
-    println map.getClass()
+    /*def map = readProperties text: config
+    println "$map"*/
+    println config.getClass()
 
     if (!filePath.isEmpty()) {
         def file_exist = findFiles (glob: filePath)
