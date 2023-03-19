@@ -19,10 +19,12 @@ def call(Closure closure) {
 
 
 def readConfig() {
-    def ini = new IniParser('resources/globalConfig.ini')
+    def config = libraryResource 'globalConfig.ini'
+    println "$config"
+    /*def ini = new IniParser('resources/globalConfig.ini')
     ini.dumpConfig()
     def secs = ini.getAllSections()
     secs.each() { it ->
         println it
-    }
+    }*/
 }
