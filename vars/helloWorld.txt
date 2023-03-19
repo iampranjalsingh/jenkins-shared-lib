@@ -5,7 +5,7 @@ Call
 
 <h4>Sample usecase of pipeline script</h4>
 <code class="language-groovy"><pre>
-@library('jenkins-shared-lib') _
+@Library('jenkins-shared-lib') _
 
 pipeline {
     agent any
