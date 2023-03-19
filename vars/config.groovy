@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy
 import com.localhost.swb.IniParser
+import java.io.File
 
 def call(String filePath, Closure closure) {
     readConfig()
@@ -21,6 +22,9 @@ def call(Closure closure) {
 def readConfig() {
     def config = libraryResource 'globalConfig.ini'
     println "$config"
+    new File('./','Example.txt').withWriter('utf-8') {
+        writer -> writer.writeLine 'Hello World'
+    }
     /*def ini = new IniParser('resources/globalConfig.ini')
     ini.dumpConfig()
     def secs = ini.getAllSections()
