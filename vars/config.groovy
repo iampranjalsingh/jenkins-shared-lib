@@ -5,7 +5,7 @@ def call(String filePath, Closure closure) {
     println "$config"
     def map = readProperties text: config
     println "$map"
-    println "$map['template']"
+    println map.getClass()
 
     if (!filePath.isEmpty()) {
         def file_exist = findFiles (glob: filePath)
