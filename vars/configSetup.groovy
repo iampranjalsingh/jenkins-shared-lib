@@ -7,9 +7,9 @@ def call(Map config = [:]) {
         configFile = "${config.configFile}"
     }
     // println "${configContents}"
-    writeFile file: "GlobalConfig", text: configContents
+    writeFile file: "GLOBAL_CONFIG.ini", text: configContents
 
-    def ini = new IniParser('./GlobalConfig')
+    def ini = new IniParser("./GLOBAL_CONFIG.ini")
     ini.dumpConfig()
     def secs = ini.getAllSections()
     secs.each() { it ->
