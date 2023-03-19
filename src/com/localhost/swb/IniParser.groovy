@@ -44,7 +44,7 @@ class IniParser implements Serializable {
                     config.get(section).put(key, value)
                 }
                 // println "Full: $full, Key: $key, Value: $value"
-                // config.get(section).put(key, value)
+                // configSetup.get(section).put(key, value)
             }
         }
     }
