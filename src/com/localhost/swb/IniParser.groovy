@@ -1,7 +1,5 @@
 package com.localhost.swb
 
-import com.cloudbees.groovy.cps.NonCPS
-
 class IniParser implements Serializable {
     def src = null;
     def sections = new ArrayList<String>();

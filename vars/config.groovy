@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 import com.localhost.swb.IniParser
-import java.io.File
+import com.cloudbees.groovy.cps.NonCPS
 
 def call(String filePath, Closure closure) {
     readConfig()
@@ -22,7 +22,9 @@ def call(Closure closure) {
 def readConfig() {
     def config = libraryResource 'globalConfig.ini'
     println "$config"
-    sh "${config} >> example.txt"
+    script {
+        sh "${config} >> example.txt"
+    }
     /*def ini = new IniParser('resources/globalConfig.ini')
     ini.dumpConfig()
     def secs = ini.getAllSections()
