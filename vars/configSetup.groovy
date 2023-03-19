@@ -7,7 +7,7 @@ def call(Map config = [:]) {
         configFile = "${config.configFile}"
     }
      def configContents = libraryResource "globalConfig.ini"
-     println "${configContents}"
+     // println "${configContents}"
      writeFile file: "GLOBAL_CONFIG.ini", text: "${configContents}"
     readConfig("${env.WORKSPACE}/GLOBAL_CONFIG.ini")
 }
