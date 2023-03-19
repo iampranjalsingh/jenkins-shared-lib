@@ -9,7 +9,7 @@ def call(Map config = [:]) {
     // println "${configContents}"
     writeFile file: "GlobalConfig", text: configContents
 
-    def ini = new IniParser('GlobalConfig')
+    def ini = new IniParser('./GlobalConfig')
     ini.dumpConfig()
     def secs = ini.getAllSections()
     secs.each() { it ->
