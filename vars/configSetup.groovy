@@ -10,7 +10,7 @@ def call(Map config = [:]) {
     writeFile file: "GLOBAL_CONFIG.ini", text: "${configContents}"
     sh "chmod a+x ./GLOBAL_CONFIG.ini"
 
-    def ini = new IniParser("./GLOBAL_CONFIG.ini")
+    def ini = new IniParser("GLOBAL_CONFIG.ini")
     ini.dumpConfig()
     def secs = ini.getAllSections()
     secs.each() { it ->
