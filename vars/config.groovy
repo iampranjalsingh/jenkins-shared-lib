@@ -26,9 +26,7 @@ def readConfig() {
 //    secs.each() { it ->
 //        println it
 //    }
-    def fileContents = libraryResource 'globalConfig.ini'
-    def props = readProperties(text:fileContents)
-    println(fileContents)
+    def config = readProperties file:"globalConfig.ini"
+    println(config)
     println("**********************")
-    println(props)
 }
