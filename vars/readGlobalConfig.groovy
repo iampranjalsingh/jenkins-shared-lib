@@ -1,9 +1,14 @@
 #!/usr/bin/env groovy
 
-def call(Map config = [:] as Map) {
-    def fileContents = libraryResource 'configJenkins.ini'
+def call(String filePath="configJenkins.ini") {
+    def fileContents = libraryResource 'globalConfig.ini'
     def props = readProperties(text:fileContents)
-    println(fileContents)
-    println("**************** ${props['template']}")
-    println(props)
+    if (!filePath.isEmpty()) {
+        def file_exist = findFiles (glob: filePath)
+        if (filePath.length == 1) {
+            def  map = readYaml file: filePath
+            props.putAll(map)
+        }
+    }
+    return props
 }
