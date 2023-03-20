@@ -6,8 +6,8 @@ def call(Map config = [:] as Map) {
     if (!config.isEmpty() && config.containsKey("configFile")) {
         configFile = "${config.configFile}"
         def fileExist = findFiles (glob: configFile)
-        if (fileExist == 1) {
-            def  map = readProperties file: filePath
+        if (fileExist.length == 1) {
+            def  map = readProperties(file: filePath)
             props.putAll(map)
         }
     }
