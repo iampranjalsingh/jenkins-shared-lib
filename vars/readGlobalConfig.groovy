@@ -1,7 +1,11 @@
 #!/usr/bin/env groovy
 
 def call(Map config = [:] as Map) {
-    def conf = readProperties file:'configJenkins.ini'
+
+    def request = libraryResource 'configJenkins.ini'
+    println "$request"
+
+    def properties = readProperties file:"configJenkins.ini"
     println "${conf}"
     /*def configContents = libraryResource "globalConfig.ini"
     writeFile file: "GLOBAL_CONFIG.ini", text: "${configContents}"
